@@ -52,6 +52,11 @@ export default {
           green: "hsl(var(--trust-green))",
           gold: "hsl(var(--trust-gold))",
         },
+        glass: {
+          DEFAULT: "var(--glass-bg)",
+          dark: "var(--glass-bg-dark)",
+          border: "var(--glass-border)",
+        },
       },
       fontFamily: {
         display: ['Playfair Display', 'serif'],
