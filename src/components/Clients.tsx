@@ -26,50 +26,50 @@ const testimonials = [
 
 const Clients = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
       
       <div className="container-custom relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
+        <div className="text-center mb-12 md:mb-16 animate-fade-in px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-3 md:mb-4">
             Trusted by Leading <span className="text-primary">Travel Agencies</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Join 50+ agencies who trust us for their group dining needs
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-4">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="glass-card p-8 animate-slide-up"
+              className="glass-card p-6 md:p-8 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Rating Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-3 md:mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />
                 ))}
               </div>
 
               {/* Quote */}
-              <blockquote className="text-foreground/90 text-lg mb-6 leading-relaxed">
+              <blockquote className="text-foreground/90 text-sm md:text-base lg:text-lg mb-4 md:mb-6 leading-relaxed">
                 "{testimonial.quote}"
               </blockquote>
 
               {/* Author Info */}
-              <div className="border-t border-white/10 pt-4">
-                <p className="font-semibold text-foreground">{testimonial.author}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.position}</p>
-                <p className="text-sm text-primary mt-1">{testimonial.company}</p>
+              <div className="border-t border-white/10 pt-3 md:pt-4">
+                <p className="font-semibold text-foreground text-sm md:text-base">{testimonial.author}</p>
+                <p className="text-xs md:text-sm text-muted-foreground">{testimonial.position}</p>
+                <p className="text-xs md:text-sm text-primary mt-1">{testimonial.company}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 px-4">
           {[
             { number: "50+", label: "Partner Agencies" },
             { number: "15+", label: "Premium Restaurants" },
@@ -78,12 +78,12 @@ const Clients = () => {
           ].map((stat, index) => (
             <div
               key={index}
-              className="glass-card p-6 text-center"
+              className="glass-card p-4 md:p-6 text-center"
             >
-              <div className="text-4xl font-display font-bold text-primary mb-2">
+              <div className="text-3xl md:text-4xl font-display font-bold text-primary mb-1 md:mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-xs md:text-sm text-muted-foreground">
                 {stat.label}
               </div>
             </div>
