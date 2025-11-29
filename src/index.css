@@ -4,65 +4,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Meknès Meal Partner Design System - Corporate & Professional */
+/* Meknès Meal Partner Design System - Glassmorphism Style */
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
+    /* Core Colors - Dark Background for Glass Effect */
+    --background: 220 25% 8%;
+    --foreground: 0 0% 98%;
     
-    /* Moroccan Blue Accent */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-soft: 217 91% 95%;
+    /* Warm Amber Accent */
+    --primary: 43 96% 56%;
+    --primary-foreground: 220 25% 8%;
+    --primary-soft: 43 96% 90%;
     
-    /* Corporate Charcoal */
-    --secondary: 220 15% 25%;
-    --secondary-foreground: 0 0% 100%;
+    /* Deep Navy Secondary */
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 0 0% 98%;
     
-    /* Neutral Grays */
-    --muted: 220 10% 96%;
-    --muted-foreground: 220 10% 45%;
+    /* Muted Grays */
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 70%;
     
-    --accent: 217 50% 92%;
-    --accent-foreground: 220 15% 20%;
+    --accent: 43 50% 65%;
+    --accent-foreground: 220 25% 8%;
     
     /* UI Elements */
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 98%;
     
-    --border: 220 10% 88%;
-    --input: 220 10% 92%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 100% / 0.1;
+    --input: 220 15% 20%;
+    --ring: 43 96% 56%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 98%;
     
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    /* Trust & Credibility Colors */
+    /* Trust Colors */
     --trust-green: 142 71% 45%;
     --trust-gold: 43 96% 56%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.95), hsl(220 15% 25% / 0.92));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(217 50% 98%));
-    
-    /* Shadows - Professional & Subtle */
-    --shadow-soft: 0 2px 8px hsl(220 15% 20% / 0.06);
-    --shadow-medium: 0 4px 16px hsl(220 15% 20% / 0.1);
-    --shadow-strong: 0 8px 32px hsl(220 15% 20% / 0.15);
-    
-    /* Typography Scale */
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    /* Glass Variables */
+    --glass-bg: 0 0% 100% / 0.08;
+    --glass-bg-dark: 0 0% 0% / 0.3;
+    --glass-border: 0 0% 100% / 0.15;
     
     /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -81,24 +73,35 @@
 }
 
 @layer utilities {
-  .section-padding {
-    @apply py-20 md:py-32 px-6 md:px-12;
+  /* Glassmorphism Effects */
+  .glass {
+    @apply backdrop-blur-xl bg-white/[0.08] border border-white/[0.15] shadow-2xl;
   }
   
+  .glass-dark {
+    @apply backdrop-blur-xl bg-black/30 border border-white/10 shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/[0.06] border border-white/10 rounded-2xl shadow-xl hover:bg-white/[0.1] transition-all duration-300;
+  }
+  
+  /* Container */
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
   }
   
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
-  }
-  
+  /* Animations */
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.8s ease-out;
   }
   
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
+    animation: slideUp 1s ease-out;
+  }
+  
+  .animate-glass-shine {
+    animation: glassShine 3s ease-in-out infinite;
   }
 }
 
@@ -114,10 +117,19 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes glassShine {
+  0%, 100% {
+    background-position: -200% center;
+  }
+  50% {
+    background-position: 200% center;
   }
 }
