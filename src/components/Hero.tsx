@@ -88,9 +88,8 @@ const Hero = () => {
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="container-custom w-full text-center px-4">
           <div className="max-w-3xl mx-auto animate-fade-in">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow-2xl">
-              Premium Dining for
-              <span className="block text-primary mt-2">Your Tour Groups</span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow-2xl">Reliable Meal Stops for
+Your Tour Groups<span className="block text-primary mt-2">Your Tour Groups</span>
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed drop-shadow-lg max-w-2xl mx-auto">Your partner for group meals in Morocco</p>
