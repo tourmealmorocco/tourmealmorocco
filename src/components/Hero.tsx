@@ -105,7 +105,7 @@ Your Tour Groups<span className="block mt-2 text-white">Reliable Meal Stops </s
       {/* Bottom Thumbnails - Next 3 Images */}
       <div className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-3 md:gap-6">
         {getNextThumbnails().map(thumbnail => <button key={thumbnail.index} onClick={() => scrollTo(thumbnail.index)} className="w-24 h-32 md:w-32 md:h-40 lg:w-40 lg:h-48 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition-all duration-300 hover:scale-105 backdrop-blur-sm">
-            <img src={thumbnail.image} alt={thumbnail.title} className="w-full h-full object-cover" />
+            <img src={thumbnail.image} alt={thumbnail.title} className="w-full h-full object-cover shadow" />
           </button>)}
       </div>
     </section>;
