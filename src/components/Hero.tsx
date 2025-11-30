@@ -66,11 +66,13 @@ const Hero = () => {
     const thumbnails = [];
     for (let i = 1; i <= 3; i++) {
       const nextIndex = (selectedIndex + i) % slides.length;
-      thumbnails.push({ ...slides[nextIndex], index: nextIndex });
+      thumbnails.push({
+        ...slides[nextIndex],
+        index: nextIndex
+      });
     }
     return thumbnails;
   };
-
   return <section className="relative h-screen overflow-hidden">
       {/* Main Carousel */}
       <div className="absolute inset-0" ref={emblaRef}>
@@ -91,15 +93,9 @@ const Hero = () => {
               <span className="block text-primary mt-2">Your Tour Groups</span>
             </h1>
             
-            <p className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed drop-shadow-lg max-w-2xl mx-auto">
-              Partner with Meknès' finest restaurants. Curated menus, guaranteed quality.
-            </p>
+            <p className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed drop-shadow-lg max-w-2xl mx-auto">Votre partenaire repas officiel pour les groupes touristiques</p>
 
-            <Button 
-              size="lg" 
-              onClick={scrollToContact} 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-base md:text-lg px-8 md:px-12 py-5 md:py-6 h-auto font-semibold rounded-xl shadow-2xl hover:scale-105 transition-transform duration-300"
-            >
+            <Button size="lg" onClick={scrollToContact} className="bg-primary hover:bg-primary/90 text-primary-foreground text-base md:text-lg px-8 md:px-12 py-5 md:py-6 h-auto font-semibold rounded-xl shadow-2xl hover:scale-105 transition-transform duration-300">
               Partner With Us
             </Button>
           </div>
@@ -109,19 +105,9 @@ const Hero = () => {
 
       {/* Bottom Thumbnails - Next 3 Images */}
       <div className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-3 md:gap-6">
-        {getNextThumbnails().map((thumbnail) => (
-          <button
-            key={thumbnail.index}
-            onClick={() => scrollTo(thumbnail.index)}
-            className="w-24 h-32 md:w-32 md:h-40 lg:w-40 lg:h-48 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-          >
-            <img 
-              src={thumbnail.image} 
-              alt={thumbnail.title} 
-              className="w-full h-full object-cover" 
-            />
-          </button>
-        ))}
+        {getNextThumbnails().map(thumbnail => <button key={thumbnail.index} onClick={() => scrollTo(thumbnail.index)} className="w-24 h-32 md:w-32 md:h-40 lg:w-40 lg:h-48 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+            <img src={thumbnail.image} alt={thumbnail.title} className="w-full h-full object-cover" />
+          </button>)}
       </div>
     </section>;
 };
