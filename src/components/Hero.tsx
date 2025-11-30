@@ -93,7 +93,7 @@ const Hero = () => {
               <span className="block text-primary mt-2">Your Tour Groups</span>
             </h1>
             
-            <p className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed drop-shadow-lg max-w-2xl mx-auto">Votre partenaire repas officiel pour les groupes touristiques</p>
+            <p className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed drop-shadow-lg max-w-2xl mx-auto">Your partner for group meals in Morocco</p>
 
             <Button size="lg" onClick={scrollToContact} className="bg-primary hover:bg-primary/90 text-primary-foreground text-base md:text-lg px-8 md:px-12 py-5 md:py-6 h-auto font-semibold rounded-xl shadow-2xl hover:scale-105 transition-transform duration-300">
               Partner With Us
