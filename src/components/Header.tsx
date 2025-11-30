@@ -7,7 +7,7 @@ const Header = () => {
         <img 
           src={logo} 
           alt="Meknès Premium Dining Logo" 
-          className="h-16 md:h-24 lg:h-32 w-auto object-contain"
+          className="h-20 md:h-32 lg:h-40 w-auto object-contain"
         />
       </div>
     </header>
