@@ -106,30 +106,14 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
-      <button 
-        onClick={scrollPrev} 
-        className="absolute left-2 md:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 group border border-white/20" 
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform" />
-      </button>
-      
-      <button 
-        onClick={scrollNext} 
-        className="absolute right-2 md:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 group border border-white/20" 
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:scale-110 transition-transform" />
-      </button>
 
       {/* Bottom Thumbnails - Next 3 Images */}
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 md:gap-4">
+      <div className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-3 md:gap-6">
         {getNextThumbnails().map((thumbnail) => (
           <button
             key={thumbnail.index}
             onClick={() => scrollTo(thumbnail.index)}
-            className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+            className="w-24 h-32 md:w-32 md:h-40 lg:w-40 lg:h-48 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition-all duration-300 hover:scale-105 backdrop-blur-sm"
           >
             <img 
               src={thumbnail.image} 
