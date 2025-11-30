@@ -1,17 +1,9 @@
 import logo from "@/assets/logo.png";
-
 const Header = () => {
-  return (
-    <header className="absolute top-0 left-0 right-0 z-50 py-4 md:py-6">
+  return <header className="absolute top-0 left-0 right-0 z-50 py-4 md:py-6">
       <div className="container-custom flex justify-center">
-        <img 
-          src={logo} 
-          alt="Meknès Premium Dining Logo" 
-          className="h-20 md:h-32 lg:h-40 w-auto object-contain"
-        />
+        <img src={logo} alt="Meknès Premium Dining Logo" className="h-20 md:h-64 lg:h-40 w-auto object-contain" />
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
