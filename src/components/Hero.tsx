@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import image1 from "https://ik.imagekit.io/akhdar/WhatsApp%20Image%202025-10-09%20at%2021.50.28.jpeg";
-import image2 from "https://ik.imagekit.io/akhdar/WhatsApp%20Image%202025-10-09%20at%2019.16.43.jpeg";
-import image3 from "https://ik.imagekit.io/akhdar/WhatsApp%20Image%202025-10-09%20at%2021.50.28.jpeg";
-import image4 from "https://ik.imagekit.io/akhdar/WhatsApp%20Image%202025-10-09%20at%2021.50.28.jpeg";
-import image5 from "https://ik.imagekit.io/akhdar/WhatsApp%20Image%202025-10-09%20at%2021.50.28.jpeg";
-import image6 from "https://ik.imagekit.io/akhdar/WhatsApp%20Image%202025-10-09%20at%2021.50.28.jpeg";
+import image1 from "@/assets/restaurant-interior-1.jpg";
+import image2 from "@/assets/restaurant-interior-2.jpg";
+import image3 from "@/assets/restaurant-interior-3.jpg";
+import image4 from "@/assets/restaurant-interior-4.jpg";
+import image5 from "@/assets/restaurant-interior-5.jpg";
+import image6 from "@/assets/restaurant-interior-6.jpg";
 const slides = [
   {
     image: image1,
