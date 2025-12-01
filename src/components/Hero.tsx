@@ -1,41 +1,19 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import image1 from "@/assets/restaurant-interior-1.jpg";
-import image2 from "@/assets/restaurant-interior-2.jpg";
-import image3 from "@/assets/restaurant-interior-3.jpg";
-import image4 from "@/assets/restaurant-interior-4.jpg";
-import image5 from "@/assets/restaurant-interior-5.jpg";
-import image6 from "@/assets/restaurant-interior-6.jpg";
-const slides = [
-  {
-    image: image1,
-    title: "Elegant Dining Experiences",
-  },
-  {
-    image: image2,
-    title: "Modern Group Settings",
-  },
-  {
-    image: image3,
-    title: "Authentic Moroccan Ambiance",
-  },
-  {
-    image: image4,
-    title: "Exquisite Cuisine",
-  },
-  {
-    image: image5,
-    title: "Spacious Interiors",
-  },
-  {
-    image: image6,
-    title: "Spectacular Views",
-  },
-];
+import { Loader2 } from "lucide-react";
+
+interface HeroSlide {
+  id: string;
+  image_url: string;
+  title: string;
+}
+
 const Hero = () => {
+  const [slides, setSlides] = useState<HeroSlide[]>([]);
+  const [loading, setLoading] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
@@ -60,6 +38,24 @@ const Hero = () => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
+
+  useEffect(() => {
+    const fetchHeroImages = async () => {
+      const { data, error } = await supabase
+        .from("hero_images")
+        .select("*")
+        .eq("is_active", true)
+        .order("display_order", { ascending: true });
+
+      if (!error && data) {
+        setSlides(data);
+      }
+      setLoading(false);
+    };
+
+    fetchHeroImages();
+  }, []);
+
   useEffect(() => {
     if (!emblaApi) return;
     onSelect();
@@ -85,14 +81,26 @@ const Hero = () => {
     }
     return thumbnails;
   };
+  if (loading) {
+    return (
+      <section className="relative h-screen overflow-hidden flex items-center justify-center">
+        <Loader2 className="h-12 w-12 animate-spin text-primary" />
+      </section>
+    );
+  }
+
+  if (slides.length === 0) {
+    return null;
+  }
+
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Main Carousel */}
       <div className="absolute inset-0" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, index) => (
-            <div key={index} className="flex-[0_0_100%] min-w-0 relative">
-              <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+            <div key={slide.id} className="flex-[0_0_100%] min-w-0 relative">
+              <img src={slide.image_url} alt={slide.title} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/40" />
             </div>
           ))}
@@ -130,7 +138,7 @@ const Hero = () => {
             onClick={() => scrollTo(thumbnail.index)}
             className="w-24 h-32 md:w-32 md:h-40 lg:w-40 lg:h-48 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition-all duration-300 hover:scale-105 backdrop-blur-sm"
           >
-            <img src={thumbnail.image} alt={thumbnail.title} className="w-full h-full object-cover shadow" />
+            <img src={thumbnail.image_url} alt={thumbnail.title} className="w-full h-full object-cover shadow" />
           </button>
         ))}
       </div>
