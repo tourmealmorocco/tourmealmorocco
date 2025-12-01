@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,48 +11,48 @@
     /* Core Colors - Dark Background for Glass Effect */
     --background: 220 25% 8%;
     --foreground: 0 0% 98%;
-    
+
     /* Warm Amber Accent */
     --primary: 43 96% 56%;
     --primary-foreground: 220 25% 8%;
     --primary-soft: 43 96% 90%;
-    
+
     /* Deep Navy Secondary */
     --secondary: 220 30% 15%;
     --secondary-foreground: 0 0% 98%;
-    
+
     /* Muted Grays */
     --muted: 220 15% 20%;
     --muted-foreground: 220 10% 70%;
-    
+
     --accent: 43 50% 65%;
     --accent-foreground: 220 25% 8%;
-    
+
     /* UI Elements */
     --card: 220 20% 12%;
     --card-foreground: 0 0% 98%;
-    
+
     --border: 0 0% 100% / 0.1;
     --input: 220 15% 20%;
     --ring: 43 96% 56%;
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     --popover: 220 20% 12%;
     --popover-foreground: 0 0% 98%;
-    
+
     --radius: 1rem;
-    
+
     /* Trust Colors */
     --trust-green: 142 71% 45%;
     --trust-gold: 43 96% 56%;
-    
+
     /* Glass Variables */
     --glass-bg: 0 0% 100% / 0.08;
     --glass-bg-dark: 0 0% 0% / 0.3;
     --glass-border: 0 0% 100% / 0.15;
-    
+
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -66,8 +66,13 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display;
   }
 }
@@ -77,29 +82,29 @@
   .glass {
     @apply backdrop-blur-xl bg-white/[0.08] border border-white/[0.15] shadow-2xl;
   }
-  
+
   .glass-dark {
     @apply backdrop-blur-xl bg-black/30 border border-white/10 shadow-2xl;
   }
-  
+
   .glass-card {
     @apply backdrop-blur-lg bg-white/[0.06] border border-white/10 rounded-2xl shadow-xl hover:bg-white/[0.1] transition-all duration-300;
   }
-  
+
   /* Container */
   .container-custom {
     @apply max-w-7xl mx-auto px-6 lg:px-8;
   }
-  
+
   /* Animations */
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out;
   }
-  
+
   .animate-slide-up {
     animation: slideUp 1s ease-out;
   }
-  
+
   .animate-glass-shine {
     animation: glassShine 3s ease-in-out infinite;
   }
@@ -126,7 +131,8 @@
 }
 
 @keyframes glassShine {
-  0%, 100% {
+  0%,
+  100% {
     background-position: -200% center;
   }
   50% {
