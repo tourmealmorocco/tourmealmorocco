@@ -24,7 +24,7 @@ const ClientLogos = () => {
   if (logos.length === 0) return null;
   return <section className="py-16 bg-secondary/30">
       <div className="container-custom">
-        <h3 className="text-center text-2xl font-display mb-12 animate-fade-in">
+        <h3 className="text-center font-display mb-12 animate-fade-in text-5xl">
           Trusted Partners
         </h3>
         <div className="flex flex-wrap justify-center items-center gap-12">
