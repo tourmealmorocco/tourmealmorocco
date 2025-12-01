@@ -6,20 +6,16 @@ import Pricing from "@/components/Pricing";
 import WhyPartner from "@/components/WhyPartner";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <Hero />
       <Gallery />
-      <ClientLogos />
+      <ClientLogos className="border-black/0" />
       <Pricing />
       <WhyPartner />
       <Contact />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
