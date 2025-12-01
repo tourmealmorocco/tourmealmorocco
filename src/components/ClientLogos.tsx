@@ -36,7 +36,7 @@ const ClientLogos = () => {
                 animationDelay: `${index * 0.1}s`,
               }}
             >
-              <img src={logo.logo_url} alt={logo.company_name} className="h-[20px] w-auto object-contain" />
+              <img src={logo.logo_url} alt={logo.company_name} className="h-[40px] w-auto object-fill" />
             </div>
           ))}
         </div>
