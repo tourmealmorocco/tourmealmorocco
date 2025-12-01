@@ -24,23 +24,23 @@ const Footer = () => {
             <h4 className="text-base md:text-lg font-semibold text-foreground mb-3 md:mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#contact" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                  Partnership Inquiry
+                <a href="/" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+                  Home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                  Our Restaurants
+                <a href="/our-work" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+                  Our Work
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                  Menu Options
+                <a href="/how-it-works" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+                  How It Works
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                  About Meknès
+                <a href="/contact" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+                  Contact
                 </a>
               </li>
             </ul>
