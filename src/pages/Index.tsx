@@ -10,7 +10,7 @@ const Index = () => {
   return <div className="min-h-screen">
       <Header />
       <Hero />
-      <Gallery className="py-[42px]" />
+      <Gallery className="py-[112px]" />
       <ClientLogos className="py-0 bg-[#11161e]" />
       <Pricing className="py-[2px]" />
       <WhyPartner />
