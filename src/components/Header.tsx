@@ -25,7 +25,7 @@ const Header = () => {
       <div className="container-custom py-0 my-0">
         <div className="flex items-center justify-between py-[33px] my-0 gap-0">
           <button onClick={() => navigate("/")} className="cursor-pointer">
-            <img src={logo} alt="Meknès Premium Dining Logo" className="h-28 md:h-7 w-auto object-cover" />
+            <img src={logo} alt="Meknès Premium Dining Logo" className="h-60 md:h-80 w-auto object-cover" />
           </button>
 
           {/* Desktop Navigation */}
