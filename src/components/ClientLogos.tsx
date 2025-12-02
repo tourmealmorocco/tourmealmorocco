@@ -38,7 +38,7 @@ const ClientLogos = ({
   if (logos.length === 0) return null;
   return <section className={`py-16 bg-secondary/30 ${className || ""}`}>
       <div className="container-custom px-0 my-0 py-px">
-        <h3 className="text-center font-display mb-12 animate-fade-in text-3xl py-0 my-0">
+        <h3 className="text-center font-display mb-12 animate-fade-in py-0 my-0 text-5xl">
           Trusted Partners
         </h3>
         <div className="overflow-hidden" ref={emblaRef}>
