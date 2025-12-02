@@ -42,7 +42,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && <nav className="md:hidden glass-card p-6 mb-4 animate-fade-in absolute right-4 top-full mt-2 w-64 z-50 px-[30px] py-[11px] my-0">
+        {isMenuOpen && <nav className="md:hidden glass-card p-6 mb-4 animate-fade-in absolute right-4 top-full mt-2 w-64 z-50 my-0 py-[7px] px-[25px]">
             <div className="flex flex-col gap-4">
               {navItems.map(item => <NavLink key={item.path} to={item.path} className="text-foreground hover:text-primary transition-colors font-medium text-lg" activeClassName="text-primary" onClick={() => setIsMenuOpen(false)}>
                   {item.label}
