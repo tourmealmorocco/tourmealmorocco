@@ -40,7 +40,7 @@ const Pricing = ({
   return <section className={`py-20 bg-gradient-to-b from-secondary/20 to-background ${className || ""}`}>
       <div className="container-custom">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-display mb-4">Our Partnership</h2>
+          <h2 className="md:text-5xl font-display mb-4 text-3xl">Our Partnership</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Everything you need for an exceptional group travel experience
           </p>
