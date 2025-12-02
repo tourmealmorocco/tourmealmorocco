@@ -38,8 +38,7 @@ const ClientLogos = ({
   if (logos.length === 0) return null;
   return <section className={`py-16 bg-secondary/30 ${className || ""}`}>
       <div className="container-custom px-0 my-0 py-[8px]">
-        <h3 className="text-center font-display mb-12 animate-fade-in py-0 my-0 text-5xl">Trusted Partners
-previous agencies</h3>
+        <h3 className="text-center font-display mb-12 animate-fade-in py-0 my-0 text-5xl">Trusted Partners</h3>
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex items-center">
             {logos.map(logo => <div key={logo.id} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 flex items-center justify-center px-8">
