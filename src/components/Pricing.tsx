@@ -38,7 +38,7 @@ const Pricing = ({
   };
   if (!plan) return null;
   return <section className={`py-20 bg-gradient-to-b from-secondary/20 to-background ${className || ""}`}>
-      <div className="container-custom">
+      <div className="container-custom py-0 my-0">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="md:text-5xl font-display mb-4 text-3xl">Our Partnership</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
