@@ -11,7 +11,7 @@ const Index = () => {
       <Header />
       <Hero />
       <Gallery className="py-[112px]" />
-      <ClientLogos className="py-0 bg-[#11161e]" />
+      <ClientLogos className="py-0 bg-[#11161d]" />
       <Pricing className="py-[2px]" />
       <WhyPartner />
       <Contact />
