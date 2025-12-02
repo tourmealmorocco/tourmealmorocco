@@ -25,7 +25,7 @@ const Header = () => {
             <img
               src={logo}
               alt="Meknès Premium Dining Logo"
-              className="h-24 md:h-32 w-auto object-cover"
+              className="h-32 md:h-40 w-auto object-cover"
             />
           </button>
 

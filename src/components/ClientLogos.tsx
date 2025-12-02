@@ -26,10 +26,10 @@ const ClientLogos = () => {
       <div className="container-custom">
         <h3 className="text-center font-display mb-12 animate-fade-in text-4xl">Trusted Partners</h3>
         <div className="flex flex-wrap justify-center items-center gap-12">
-          {logos.map((logo, index) => <div key={logo.id} className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 animate-fade-in" style={{
+          {logos.map((logo, index) => <div key={logo.id} className="transition-all duration-300 animate-fade-in" style={{
           animationDelay: `${index * 0.1}s`
         }}>
-              <img src={logo.logo_url} alt={logo.company_name} className="h-[40px] w-auto object-fill" />
+              <img src={logo.logo_url} alt={logo.company_name} className="h-20 md:h-24 w-auto object-fill" />
             </div>)}
         </div>
       </div>
