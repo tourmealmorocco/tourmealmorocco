@@ -11,7 +11,7 @@ const Index = () => {
       <Header />
       <Hero />
       <Gallery />
-      
+      <ClientLogos className="border-black/0" />
       <Pricing />
       <WhyPartner />
       <Contact />
