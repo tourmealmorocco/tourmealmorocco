@@ -22,7 +22,7 @@ const Header = () => {
     label: "Contact"
   }];
   return <header className="absolute top-0 left-0 right-0 z-50">
-      <div className="container-custom">
+      <div className="container-custom py-0 my-0">
         <div className="flex items-center justify-between py-[33px] my-0 gap-0">
           <button onClick={() => navigate("/")} className="cursor-pointer">
             <img src={logo} alt="Meknès Premium Dining Logo" className="h-28 md:h-7 w-auto object-cover" />
