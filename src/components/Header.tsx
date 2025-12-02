@@ -56,7 +56,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden bg-background/95 backdrop-blur-sm p-6 mb-4 animate-fade-in rounded-lg shadow-lg">
+          <nav className="md:hidden glass-card p-6 mb-4 animate-fade-in absolute right-4 top-full mt-2 w-64 z-50">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <NavLink

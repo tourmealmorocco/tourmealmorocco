@@ -9,7 +9,11 @@ interface ClientLogo {
   company_name: string;
 }
 
-const ClientLogos = () => {
+interface ClientLogosProps {
+  className?: string;
+}
+
+const ClientLogos = ({ className }: ClientLogosProps) => {
   const [logos, setLogos] = useState<ClientLogo[]>([]);
   const [emblaRef] = useEmblaCarousel(
     { loop: true, align: "center" },
@@ -34,7 +38,7 @@ const ClientLogos = () => {
   if (logos.length === 0) return null;
 
   return (
-    <section className="py-16 bg-secondary/30">
+    <section className={`py-16 bg-secondary/30 ${className || ""}`}>
       <div className="container-custom">
         <h3 className="text-center font-display mb-12 animate-fade-in text-4xl">
           Trusted Partners

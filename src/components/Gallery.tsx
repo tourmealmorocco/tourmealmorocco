@@ -10,7 +10,11 @@ interface GalleryImage {
   caption: string | null;
 }
 
-const Gallery = () => {
+interface GalleryProps {
+  className?: string;
+}
+
+const Gallery = ({ className }: GalleryProps) => {
   const [images, setImages] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -35,7 +39,7 @@ const Gallery = () => {
 
   if (loading) {
     return (
-      <section className="py-20 bg-gradient-to-b from-background to-secondary/20">
+      <section className={`py-20 bg-gradient-to-b from-background to-secondary/20 ${className || ""}`}>
         <div className="container-custom flex justify-center">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </div>
@@ -44,7 +48,7 @@ const Gallery = () => {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-secondary/20">
+    <section className={`py-20 bg-gradient-to-b from-background to-secondary/20 ${className || ""}`}>
       <div className="container-custom">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-display mb-4">Our Happy Clients</h2>
