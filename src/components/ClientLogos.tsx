@@ -9,12 +9,13 @@ const ClientLogos = () => {
   const [logos, setLogos] = useState<ClientLogo[]>([]);
   useEffect(() => {
     const fetchLogos = async () => {
-      const {
-        data,
-        error
-      } = await supabase.from("client_logos").select("*").eq("is_active", true).order("display_order", {
-        ascending: true
-      });
+      const { data, error } = await supabase
+        .from("client_logos")
+        .select("*")
+        .eq("is_active", true)
+        .order("display_order", {
+          ascending: true,
+        });
       if (!error && data) {
         setLogos(data);
       }
@@ -22,17 +23,25 @@ const ClientLogos = () => {
     fetchLogos();
   }, []);
   if (logos.length === 0) return null;
-  return <section className="py-16 bg-secondary/30">
+  return (
+    <section className="py-16 bg-secondary/30">
       <div className="container-custom">
         <h3 className="text-center font-display mb-12 animate-fade-in text-4xl">Trusted Partners</h3>
         <div className="flex flex-wrap justify-center items-center gap-12">
-          {logos.map((logo, index) => <div key={logo.id} className="transition-all duration-300 animate-fade-in" style={{
-          animationDelay: `${index * 0.1}s`
-        }}>
-              <img src={logo.logo_url} alt={logo.company_name} className="h-20 md:h-24 w-auto object-fill" />
-            </div>)}
+          {logos.map((logo, index) => (
+            <div
+              key={logo.id}
+              className="transition-all duration-300 animate-fade-in"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+              }}
+            >
+              <img src={logo.logo_url} alt={logo.company_name} className="h-20 md:h-30 w-auto object-fill" />
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default ClientLogos;
