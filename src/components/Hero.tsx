@@ -69,10 +69,11 @@ const Hero = () => {
       behavior: "smooth",
     });
   };
-  // Get next 3 images for bottom thumbnails
+  // Get all remaining images for bottom thumbnails (or up to 6)
   const getNextThumbnails = () => {
     const thumbnails = [];
-    for (let i = 1; i <= 3; i++) {
+    const maxThumbnails = Math.min(slides.length - 1, 6); // Show all or max 6
+    for (let i = 1; i <= maxThumbnails; i++) {
       const nextIndex = (selectedIndex + i) % slides.length;
       thumbnails.push({
         ...slides[nextIndex],
@@ -130,13 +131,13 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom Thumbnails - Next 3 Images */}
-      <div className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-3 md:gap-6">
+      {/* Bottom Thumbnails - All Remaining Images */}
+      <div className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-2 md:gap-4 flex-wrap justify-center max-w-[90vw]">
         {getNextThumbnails().map((thumbnail) => (
           <button
             key={thumbnail.index}
             onClick={() => scrollTo(thumbnail.index)}
-            className="w-24 h-32 md:w-32 md:h-40 lg:w-40 lg:h-48 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+            className="w-16 h-20 md:w-24 md:h-32 lg:w-28 lg:h-36 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition-all duration-300 hover:scale-105 backdrop-blur-sm"
           >
             <img src={thumbnail.image_url} alt={thumbnail.title} className="w-full h-full object-cover shadow" />
           </button>
