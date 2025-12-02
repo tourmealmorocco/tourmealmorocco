@@ -47,7 +47,7 @@ const Pricing = ({
         </div>
 
         <div className="max-w-xl mx-auto">
-          <div className="glass-card p-10 text-center animate-fade-in mx-0 px-[31px] py-[9px] my-[8px]">
+          <div className="glass-card p-10 text-center animate-fade-in mx-0 px-[31px] my-[10px] py-[27px]">
             <div className="inline-block bg-primary/10 rounded-full mb-6 px-[14px] my-[6px] py-[10px]">
               <span className="text-primary font-semibold text-sm">{plan.name}</span>
             </div>
