@@ -11,7 +11,11 @@ interface PricingPlan {
   features: string[];
 }
 
-const Pricing = () => {
+interface PricingProps {
+  className?: string;
+}
+
+const Pricing = ({ className }: PricingProps) => {
   const [plan, setPlan] = useState<PricingPlan | null>(null);
 
   useEffect(() => {
@@ -40,7 +44,7 @@ const Pricing = () => {
   if (!plan) return null;
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/20 to-background">
+    <section className={`py-20 bg-gradient-to-b from-secondary/20 to-background ${className || ""}`}>
       <div className="container-custom">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-display mb-4">Our Partnership</h2>

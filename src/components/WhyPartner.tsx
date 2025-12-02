@@ -1,4 +1,7 @@
 import { Shield, Clock, Users, Award, MapPin, Utensils } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+
 const benefits = [{
   icon: Shield,
   title: "Guaranteed Quality",
@@ -25,6 +28,11 @@ const benefits = [{
   description: "Breakfast, lunch, and dinner packages with customizable dietary accommodations."
 }];
 const WhyPartner = () => {
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, align: "center" },
+    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+  );
+
   return <section className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
       
@@ -36,12 +44,12 @@ const WhyPartner = () => {
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">We handle all the details so you can focus on delivering exceptional tour experience</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4">
-          {benefits.map((benefit, index) => {
-          const Icon = benefit.icon;
-          return <div key={index} className="glass-card p-6 md:p-8 group animate-slide-up" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
+        {/* Carousel */}
+        <div className="overflow-hidden px-4" ref={emblaRef}>
+          <div className="flex gap-6 md:gap-8">
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return <div key={index} className="glass-card p-6 md:p-8 group flex-[0_0_100%] md:flex-[0_0_45%] lg:flex-[0_0_30%]">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
                   <Icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 </div>
@@ -54,7 +62,8 @@ const WhyPartner = () => {
                   {benefit.description}
                 </p>
               </div>;
-        })}
+            })}
+          </div>
         </div>
 
         {/* Additional Value Proposition */}
