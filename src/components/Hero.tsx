@@ -132,7 +132,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Thumbnails - Horizontal Row */}
-      <div className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20 overflow-hidden max-w-[90vw]">
+      <div className="absolute bottom-16 md:bottom-20 left-0 right-0 z-20 overflow-hidden px-4">
         <div className="flex gap-2 md:gap-4 justify-center">
           {getNextThumbnails().map((thumbnail) => (
             <button

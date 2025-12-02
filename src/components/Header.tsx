@@ -47,22 +47,22 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden glass-card p-6 mb-4 animate-fade-in">
+          <nav className="md:hidden bg-background/95 backdrop-blur-sm p-6 mb-4 animate-fade-in rounded-lg shadow-lg">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <NavLink
                   key={item.path}
                   to={item.path}
-                  className="text-foreground hover:text-primary transition-colors font-medium"
+                  className="text-foreground hover:text-primary transition-colors font-medium text-lg"
                   activeClassName="text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
