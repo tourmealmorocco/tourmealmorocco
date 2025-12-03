@@ -40,11 +40,16 @@ const ClientLogos = ({
   if (logos.length === 0) return null;
 
   return (
-    <section className={`py-4 md:py-6 ${className || ""}`}>
+    <section className={`py-2 md:py-4 ${className || ""}`}>
       <div className="container-custom">
-        <h3 className="text-center font-display text-lg md:text-xl text-muted-foreground mb-4 animate-fade-in">
-          Trusted by Leading Agencies
-        </h3>
+        <div className="text-center mb-4 animate-fade-in">
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-1">
+            Trusted by <span className="text-primary">Leading Agencies</span>
+          </h3>
+          <p className="text-sm md:text-base text-muted-foreground">
+            Partnering with top travel companies worldwide
+          </p>
+        </div>
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex items-center">
             {logos.map(logo => (
@@ -55,7 +60,7 @@ const ClientLogos = ({
                 <img 
                   src={logo.logo_url} 
                   alt={logo.company_name} 
-                  className="h-16 md:h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" 
+                  className="h-20 md:h-24 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" 
                 />
               </div>
             ))}

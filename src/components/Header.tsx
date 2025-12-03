@@ -41,15 +41,32 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && <nav className="md:hidden glass-card p-6 mb-4 animate-fade-in absolute right-4 top-full mt-2 w-64 z-50 my-0 py-[7px] px-[25px]">
-            <div className="flex flex-col gap-4">
-              {navItems.map(item => <NavLink key={item.path} to={item.path} className="text-foreground hover:text-primary transition-colors font-medium text-lg" activeClassName="text-primary" onClick={() => setIsMenuOpen(false)}>
-                  {item.label}
-                </NavLink>)}
-            </div>
-          </nav>}
       </div>
+
+      {/* Full-screen Mobile Navigation */}
+      {isMenuOpen && (
+        <nav className="md:hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-xl animate-fade-in flex flex-col items-center justify-center">
+          <button 
+            onClick={() => setIsMenuOpen(false)} 
+            className="absolute top-8 right-6 p-2"
+          >
+            <X className="h-10 w-10 text-white" />
+          </button>
+          <div className="flex flex-col items-center gap-8">
+            {navItems.map(item => (
+              <NavLink 
+                key={item.path} 
+                to={item.path} 
+                className="text-white hover:text-primary transition-colors font-display font-semibold text-3xl" 
+                activeClassName="text-primary" 
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
+        </nav>
+      )}
     </header>;
 };
 export default Header;

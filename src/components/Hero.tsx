@@ -62,19 +62,6 @@ const Hero = () => {
     });
   };
 
-  const getNextThumbnails = () => {
-    const thumbnails = [];
-    const maxThumbnails = Math.min(slides.length - 1, 5);
-    for (let i = 1; i <= maxThumbnails; i++) {
-      const nextIndex = (selectedIndex + i) % slides.length;
-      thumbnails.push({
-        ...slides[nextIndex],
-        index: nextIndex
-      });
-    }
-    return thumbnails;
-  };
-
   if (loading) {
     return (
       <section className="relative h-screen overflow-hidden flex items-center justify-center">
@@ -123,18 +110,22 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom Thumbnails - Aligned to edge */}
-      <div className="absolute bottom-6 md:bottom-12 left-0 right-0 z-20 px-2 md:px-4">
-        <div className="flex gap-2 md:gap-3 justify-end overflow-hidden">
-          {getNextThumbnails().map(thumbnail => (
+      {/* Bottom Thumbnails - Centered with current slide highlighted */}
+      <div className="absolute bottom-6 md:bottom-12 left-0 right-0 z-20 px-4">
+        <div className="flex gap-2 md:gap-3 justify-center overflow-hidden">
+          {slides.map((slide, index) => (
             <button 
-              key={thumbnail.index} 
-              onClick={() => scrollTo(thumbnail.index)} 
-              className="w-14 h-16 sm:w-16 sm:h-20 md:w-20 md:h-24 lg:w-24 lg:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/20 hover:border-primary/60 transition-all duration-300 hover:scale-105 group"
+              key={slide.id} 
+              onClick={() => scrollTo(index)} 
+              className={`w-14 h-16 sm:w-16 sm:h-20 md:w-20 md:h-24 lg:w-24 lg:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 group ${
+                index === selectedIndex 
+                  ? "ring-2 ring-primary ring-offset-2 ring-offset-black/50 scale-105" 
+                  : "border border-white/20 hover:border-primary/60 opacity-70 hover:opacity-100"
+              }`}
             >
               <img 
-                src={thumbnail.image_url} 
-                alt={thumbnail.title} 
+                src={slide.image_url} 
+                alt={slide.title} 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
               />
             </button>
