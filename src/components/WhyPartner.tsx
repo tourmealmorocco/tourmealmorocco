@@ -29,72 +29,72 @@ const benefits = [{
 }];
 const WhyPartner = () => {
   const [emblaRef] = useEmblaCarousel(
-    { loop: true, align: "center" },
-    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+    { loop: true, align: "start" },
+    [Autoplay({ delay: 3500, stopOnInteraction: false })]
   );
 
-  return <section className="py-16 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+  return (
+    <section className="py-12 md:py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/5 to-background" />
       
       <div className="container-custom relative z-10">
-        <div className="text-center mb-12 md:mb-16 animate-fade-in px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-3 md:mb-4">
+        <div className="text-center mb-8 md:mb-12 animate-fade-in px-4">
+          <span className="text-primary text-xs md:text-sm font-medium tracking-wider uppercase mb-2 block">
+            Why Choose Us
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
             Why Partner <span className="text-primary">With Us?</span>
           </h2>
-          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">We handle all the details so you can focus on delivering exceptional tour experience</p>
         </div>
 
         {/* Carousel */}
-        <div className="overflow-hidden px-4" ref={emblaRef}>
-          <div className="flex gap-6 md:gap-8">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
-              return <div key={index} className="glass-card p-6 md:p-8 group flex-[0_0_100%] md:flex-[0_0_45%] lg:flex-[0_0_30%]">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
-                  <Icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+              return (
+                <div 
+                  key={index} 
+                  className="flex-[0_0_85%] sm:flex-[0_0_70%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0 px-2 md:px-3"
+                >
+                  <div className="glass-card p-5 md:p-6 h-full group">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                      <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                    </div>
+                    
+                    <h3 className="text-base md:text-lg font-display font-semibold text-foreground mb-2">
+                      {benefit.title}
+                    </h3>
+                    
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </div>
-                
-                <h3 className="text-lg md:text-xl lg:text-2xl font-display font-semibold text-foreground mb-2 md:mb-3">
-                  {benefit.title}
-                </h3>
-                
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>;
+              );
             })}
           </div>
         </div>
 
-        {/* Additional Value Proposition */}
-        <div className="mt-12 md:mt-16 glass rounded-2xl md:rounded-3xl p-6 md:p-12 text-center mx-4">
-          <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3 md:mb-4">
+        {/* Additional Value Proposition - Compact for mobile */}
+        <div className="mt-8 md:mt-12 glass rounded-xl md:rounded-2xl p-5 md:p-8 text-center mx-2 md:mx-4">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground mb-2 md:mb-3">
             Local Expertise, <span className="text-primary">International Standards</span>
           </h3>
-          <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8">
-            Our deep relationships with Meknès' best restaurants combined with our understanding 
-            of international tour operations ensure seamless dining experiences for your groups.
+          <p className="text-xs md:text-sm text-muted-foreground max-w-2xl mx-auto mb-4 md:mb-6">
+            Our deep relationships with Meknès' best restaurants ensure seamless dining experiences for your groups.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">No Hidden Fees</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Flexible Booking</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">24/7 Support</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Multi-Language Service</span>
-            </div>
+          <div className="flex flex-wrap justify-center gap-3 md:gap-5 text-xs">
+            {["No Hidden Fees", "Flexible Booking", "24/7 Support", "Multi-Language"].map((item) => (
+              <div key={item} className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                <span className="text-muted-foreground">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default WhyPartner;
