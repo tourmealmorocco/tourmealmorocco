@@ -21,7 +21,6 @@ const ClientLogos = ({
     delay: 2500,
     stopOnInteraction: false
   })]);
-
   useEffect(() => {
     const fetchLogos = async () => {
       const {
@@ -36,14 +35,11 @@ const ClientLogos = ({
     };
     fetchLogos();
   }, []);
-
   if (logos.length === 0) return null;
-
-  return (
-    <section className={`py-2 md:py-4 ${className || ""}`}>
+  return <section className={`py-2 md:py-4 ${className || ""}`}>
       <div className="container-custom">
         <div className="text-center mb-4 animate-fade-in">
-          <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-1">
+          <h3 className="font-display text-2xl font-bold text-foreground mb-1 md:text-5xl">
             Trusted by <span className="text-primary">Leading Agencies</span>
           </h3>
           <p className="text-sm md:text-base text-muted-foreground">
@@ -52,22 +48,12 @@ const ClientLogos = ({
         </div>
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex items-center">
-            {logos.map(logo => (
-              <div 
-                key={logo.id} 
-                className="flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] min-w-0 flex items-center justify-center px-4 md:px-6"
-              >
-                <img 
-                  src={logo.logo_url} 
-                  alt={logo.company_name} 
-                  className="h-20 md:h-24 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" 
-                />
-              </div>
-            ))}
+            {logos.map(logo => <div key={logo.id} className="flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] min-w-0 flex items-center justify-center px-4 md:px-6">
+                <img src={logo.logo_url} alt={logo.company_name} className="h-20 md:h-24 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 export default ClientLogos;

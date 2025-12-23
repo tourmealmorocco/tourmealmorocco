@@ -42,7 +42,7 @@ const Gallery = ({
   return <section className={`py-20 bg-gradient-to-b from-background to-secondary/20 ${className || ""}`}>
       <div className="container-custom">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="md:text-5xl font-display mb-4 text-center text-3xl">Our Happy Clients</h2>
+          <h2 className="md:text-5xl font-display mb-4 text-center text-3xl text-amber-400">Our Happy Clients</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             See the memorable experiences we've created for groups from around the world
           </p>
