@@ -1,10 +1,7 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="relative py-8 md:py-12 border-t border-white/10">
+  return <footer className="relative py-8 md:py-12 border-t border-white/10">
       <div className="absolute inset-0 bg-secondary/30" />
       
       <div className="container-custom relative z-10 px-4">
@@ -15,7 +12,7 @@ const Footer = () => {
               Meknès Meal <span className="text-primary">Partner</span>
             </h3>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Premium dining solutions for tour operators and travel agencies in Meknès, Morocco.
+              Premium meal solutions for tour operators and travel agencies in Meknès, Morocco.
             </p>
           </div>
 
@@ -52,14 +49,14 @@ const Footer = () => {
             <ul className="space-y-2 md:space-y-3">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                <a href="mailto:contact@meknesmealpartner.com" className="text-sm md:text-base hover:text-primary transition-colors break-all">
-                  contact@meknesmealpartner.com
+                <a className="text-sm md:text-base hover:text-primary transition-colors break-all" href="mailto:ayoub.iqrae@gmail.com">
+                  ayoub.iqrae@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="tel:+212535123456" className="text-sm md:text-base hover:text-primary transition-colors">
-                  +212 535 123 456
+                <a className="text-sm md:text-base hover:text-primary transition-colors" href="tel:+212777427476">
+                  +212 777 427 476
                 </a>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
@@ -83,8 +80,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

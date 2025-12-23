@@ -73,8 +73,8 @@ const Contact = () => {
                   </div>
                   <div className="min-w-0">
                     <p className="font-semibold text-foreground mb-1 text-sm md:text-base">Email</p>
-                    <a href="mailto:contact@meknesmealpartner.com" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors break-all">
-                      contact@meknesmealpartner.com
+                    <a className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors break-all" href="mailto:ayoub.iqrae@gmail.com">
+                      ayoub.iqrae@gmail.com
                     </a>
                   </div>
                 </div>
@@ -85,8 +85,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground mb-1 text-sm md:text-base">Phone</p>
-                    <a href="tel:+212535123456" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                      +212 535 123 456
+                    <a className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors" href="tel:+212777427476">
+                      +212 777 427 476 
                     </a>
                   </div>
                 </div>
