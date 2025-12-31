@@ -18,7 +18,9 @@ const Contact = () => {
   });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+    
+    // Validate required fields
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
@@ -26,10 +28,30 @@ const Contact = () => {
       });
       return;
     }
+
+    // Format the WhatsApp message
+    const whatsappMessage = `🍽️ *New Partnership Inquiry*
+
+*Name:* ${formData.name.trim()}
+*Agency:* ${formData.agencyName.trim() || "Not provided"}
+*Email:* ${formData.email.trim()}
+*Phone:* ${formData.phone.trim() || "Not provided"}
+*Country:* ${formData.country.trim() || "Not provided"}
+
+*Message:*
+${formData.message.trim()}`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/212777427476?text=${encodedMessage}`;
+
+    // Show thank you toast
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours."
+      title: "Thank you for your request!",
+      description: "Redirecting to WhatsApp to send your inquiry..."
     });
+
+    // Clear form
     setFormData({
       name: "",
       agencyName: "",
@@ -38,6 +60,11 @@ const Contact = () => {
       phone: "",
       message: ""
     });
+
+    // Open WhatsApp in new tab after a short delay
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank");
+    }, 500);
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
