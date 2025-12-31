@@ -38,8 +38,9 @@ const HowItWorksSection = () => {
     <section className="py-16 md:py-24 bg-secondary/10">
       <div className="container-custom">
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
-            How It Works
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+            <span className="text-foreground">How It</span>{" "}
+            <span className="text-primary">Works</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             A simple 5-step process for seamless meal coordination

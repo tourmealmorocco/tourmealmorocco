@@ -117,7 +117,7 @@ const Hero = () => {
             <button 
               key={slide.id} 
               onClick={() => scrollTo(index)} 
-              className={`w-14 h-16 sm:w-16 sm:h-20 md:w-20 md:h-24 lg:w-24 lg:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 group ${
+              className={`w-14 h-16 sm:w-16 sm:h-20 md:w-20 md:h-24 lg:w-24 lg:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 group relative ${
                 index === selectedIndex 
                   ? "ring-2 ring-primary ring-offset-2 ring-offset-black/50 scale-105" 
                   : "border border-white/20 hover:border-primary/60 opacity-70 hover:opacity-100"
@@ -128,6 +128,7 @@ const Hero = () => {
                 alt={slide.title} 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300" />
             </button>
           ))}
         </div>

@@ -50,8 +50,9 @@ const Contact = () => {
       
       <div className="container-custom relative z-10">
         <div className="text-center mb-12 md:mb-16 animate-fade-in px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-3 md:mb-4">
-            Let's Organize Your Group Meals in Meknès
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 md:mb-4">
+            <span className="text-foreground">Let's Organize Your Group Meals</span>{" "}
+            <span className="text-primary">in Meknès</span>
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Contact us to discuss your tour schedules and meal requirements
