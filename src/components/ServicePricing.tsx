@@ -1,8 +1,12 @@
 import { Users, UserPlus, Info } from "lucide-react";
 
-const ServicePricing = () => {
+interface ServicePricingProps {
+  id?: string;
+}
+
+const ServicePricing = ({ id }: ServicePricingProps) => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/10 to-background">
+    <section id={id} className="py-16 md:py-24 bg-gradient-to-b from-secondary/10 to-background">
       <div className="container-custom">
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
