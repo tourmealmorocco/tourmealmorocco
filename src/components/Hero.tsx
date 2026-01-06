@@ -110,14 +110,14 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom Thumbnails - Centered with current slide highlighted */}
-      <div className="absolute bottom-6 md:bottom-12 left-0 right-0 z-20 px-4">
-        <div className="flex gap-2 md:gap-4 justify-center overflow-hidden">
+      {/* Bottom Thumbnails - Edge-aligned on mobile, centered on desktop */}
+      <div className="absolute bottom-6 md:bottom-12 left-0 right-0 z-20">
+        <div className="flex gap-2 md:gap-4 md:justify-center overflow-x-auto md:overflow-hidden px-0 md:px-4 scrollbar-hide">
           {slides.map((slide, index) => (
             <button 
               key={slide.id} 
               onClick={() => scrollTo(index)} 
-              className={`w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32 lg:w-32 lg:h-36 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 group relative ${
+              className={`w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32 lg:w-32 lg:h-36 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 group relative first:ml-4 last:mr-4 md:first:ml-0 md:last:mr-0 ${
                 index === selectedIndex 
                   ? "ring-2 ring-primary ring-offset-2 ring-offset-black/50 scale-105" 
                   : "border border-white/20 hover:border-primary/60 opacity-70 hover:opacity-100"

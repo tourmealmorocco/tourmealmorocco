@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import OurWork from "./pages/OurWork";
 import ContactPage from "./pages/ContactPage";
 import HowItWorks from "./pages/HowItWorks";
+import WhoIAm from "./pages/WhoIAm";
 import NotFound from "./pages/NotFound";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/who-i-am" element={<WhoIAm />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
