@@ -26,7 +26,7 @@ const Header = () => {
   }];
   return <header className="absolute top-0 left-0 right-0 z-50">
       <div className="container-custom py-0 my-0">
-        <div className="flex items-center justify-between py-[33px] my-0 gap-0">
+        <div className="flex items-center justify-between gap-0 my-0 py-[11px]">
           <button onClick={() => navigate("/")} className="cursor-pointer">
             <img src={logo} alt="Meknès Premium Dining Logo" className="h-40 md:h-60 w-auto object-cover" />
           </button>
@@ -47,29 +47,16 @@ const Header = () => {
       </div>
 
       {/* Full-screen Mobile Navigation */}
-      {isMenuOpen && (
-        <nav className="md:hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-xl animate-fade-in flex flex-col items-center justify-center">
-          <button 
-            onClick={() => setIsMenuOpen(false)} 
-            className="absolute top-8 right-6 p-2"
-          >
+      {isMenuOpen && <nav className="md:hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-xl animate-fade-in flex flex-col items-center justify-center">
+          <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 p-2">
             <X className="h-10 w-10 text-white" />
           </button>
           <div className="flex flex-col items-center gap-8">
-            {navItems.map(item => (
-              <NavLink 
-                key={item.path} 
-                to={item.path} 
-                className="text-white hover:text-primary transition-colors font-display font-semibold text-3xl" 
-                activeClassName="text-primary" 
-                onClick={() => setIsMenuOpen(false)}
-              >
+            {navItems.map(item => <NavLink key={item.path} to={item.path} className="text-white hover:text-primary transition-colors font-display font-semibold text-3xl" activeClassName="text-primary" onClick={() => setIsMenuOpen(false)}>
                 {item.label}
-              </NavLink>
-            ))}
+              </NavLink>)}
           </div>
-        </nav>
-      )}
+        </nav>}
     </header>;
 };
 export default Header;
