@@ -3,7 +3,6 @@ import profileImage from "@/assets/profile-whatsapp.png";
 
 const FloatingWhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [showLabel, setShowLabel] = useState(true);
   const hasPlayedSound = useRef(false);
 
   useEffect(() => {
@@ -28,16 +27,6 @@ const FloatingWhatsAppButton = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isVisible]);
-
-  // Hide label after 5 seconds
-  useEffect(() => {
-    if (isVisible && showLabel) {
-      const timer = setTimeout(() => {
-        setShowLabel(false);
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [isVisible, showLabel]);
 
   const playNotificationSound = () => {
     try {
@@ -77,15 +66,10 @@ const FloatingWhatsAppButton = () => {
           : "opacity-0 scale-0 translate-y-10 pointer-events-none"
       }`}
     >
-      {/* Contact Ayoub Label */}
-      <div
-        className={`bg-background/95 backdrop-blur-sm text-foreground px-4 py-2 rounded-full shadow-lg border border-border/50 text-sm font-medium transition-all duration-300 ${
-          showLabel && isVisible
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 translate-x-4 pointer-events-none"
-        }`}
-      >
-        Contact Ayoub 👋
+      {/* Contact Ayoub Label with Green Dot */}
+      <div className="flex items-center gap-2 bg-background/95 backdrop-blur-sm text-foreground px-4 py-2 rounded-full shadow-lg border border-border/50">
+        <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+        <span className="text-sm font-medium">Contact Ayoub 👋</span>
       </div>
 
       {/* WhatsApp Button */}
@@ -99,9 +83,6 @@ const FloatingWhatsAppButton = () => {
           alt="Contact Ayoub via WhatsApp"
           className="w-full h-full object-cover"
         />
-        
-        {/* Green Online Indicator */}
-        <span className="absolute top-0 right-0 w-4 h-4 md:w-5 md:h-5 bg-green-500 rounded-full border-2 border-background animate-pulse" />
       </button>
     </div>
   );
