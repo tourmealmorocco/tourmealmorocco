@@ -9,7 +9,6 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import ServicePricing from "@/components/ServicePricing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
 
 const Index = () => {
   return (
@@ -25,7 +24,6 @@ const Index = () => {
       <ServicePricing id="service-pricing" />
       <Contact />
       <Footer />
-      <FloatingWhatsAppButton />
     </div>
   );
 };
